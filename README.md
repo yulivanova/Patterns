@@ -1,0 +1,1 @@
+Project Sample [![Build status](https://ci.appveyor.com/api/projects/status/kui08as2dsydie3n?svg=true)](https://ci.appveyor.com/project/yulivanova/patterns)
