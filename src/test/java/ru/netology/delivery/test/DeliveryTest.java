@@ -1,4 +1,4 @@
-package ru.netology.delivery.test;
+package ru.netology.deli very.test;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
