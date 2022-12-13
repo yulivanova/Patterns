@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -32,7 +34,7 @@ class DeliveryTest {
         $("[data-test-id='phone'] input").setValue(DataGenerator.generatePhone("ru"));
         $("[data-test-id='agreement']").click();
         $(By.className("button")).click();
-        $("[data-test-id='success-notification']").shouldHave(text("Встреча успешно запланирована на " + firstMeetingDate));
+        $("[data-test-id='success-notification']").shouldHave(text("Встреча успешно запланирована на " + firstMeetingDate), Duration.ofSeconds(15000));
     }
 
     @Test
@@ -49,13 +51,13 @@ class DeliveryTest {
         $("[data-test-id='phone'] input").setValue(DataGenerator.generatePhone("ru"));
         $("[data-test-id='agreement']").click();
         $(By.className("button")).click();
-        $("[data-test-id='success-notification']").shouldHave(text("Встреча успешно запланирована на " + firstMeetingDate));
+        $("[data-test-id='success-notification']").shouldHave(text("Встреча успешно запланирована на " + firstMeetingDate), Duration.ofSeconds(15000));
         $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.DELETE);
         $("[data-test-id='date'] input").sendKeys(secondMeetingDate);
         $(By.className("button")).click();
         $("[data-test-id='replan-notification']").shouldHave(text("У вас уже запланирована встреча на другую дату. Перепланировать?"));
         $(byText("Перепланировать")).click();
-        $("[data-test-id='success-notification']").shouldHave(text("Встреча успешно запланирована на " + secondMeetingDate));
+        $("[data-test-id='success-notification']").shouldHave(text("Встреча успешно запланирована на " + secondMeetingDate), Duration.ofSeconds(15000));
     }
 }
 
