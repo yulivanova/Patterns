@@ -27,7 +27,7 @@ class DeliveryTest {
     void shouldSuccessfulPlanMeeting() {
         var daysToAddForFirstMeeting = 4;
         var firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
-        $("[data-test-id='city'] input").setValue(DataGenerator.generateCity("ru"));
+        $("[data-test-id='city'] input").setValue(DataGenerator.generateCity());
         $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.DELETE);
         $("[data-test-id='date'] input").sendKeys(firstMeetingDate);
         $("[data-test-id='name'] input").setValue(DataGenerator.generateName("ru"));
@@ -44,7 +44,7 @@ class DeliveryTest {
         var firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
         var daysToAddForSecondMeeting = 7;
         var secondMeetingDate = DataGenerator.generateDate(daysToAddForSecondMeeting);
-        $("[data-test-id='city'] input").setValue(DataGenerator.generateCity("ru"));
+        $("[data-test-id='city'] input").setValue(DataGenerator.generateCity());
         $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.DELETE);
         $("[data-test-id='date'] input").sendKeys(firstMeetingDate);
         $("[data-test-id='name'] input").setValue(DataGenerator.generateName("ru"));
